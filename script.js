@@ -73,6 +73,7 @@ async function fetchPools(masterAccount) {
                 poolsWithFee.push({ accountId, stake, fee: `${(fee.numerator * 100 / fee.denominator)}%` });
         })());
     });
+    poolsWithFee.push({'aurora.poolv1.near', 0, '9%'});
     await Promise.all(promises);
     return poolsWithFee;
 }
